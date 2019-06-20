@@ -1,0 +1,27 @@
+{{> header.mustache }}
+<h1>Current Shopping Cart contents</h1>
+
+<div>
+    <table>
+        <thead>
+        <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Price</th>
+        </tr>
+        </thead>
+
+        {{#cart}}
+        <tr>
+            <td><a href="/product/{{productId}}">{{name}}</a></td>
+            <td>{{quantity}}</td>
+            <td>${{cost}}</td>
+        </tr>
+        {{/cart}}
+        <tr>
+            <td>Total</td><td></td><td>${{total}}</td></tr>
+        </tr>
+    </table>
+
+</div>
+{{> footer.mustache}}

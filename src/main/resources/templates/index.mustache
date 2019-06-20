@@ -1,0 +1,14 @@
+{{> header.mustache }}
+
+<div class="productlist">
+    {{#products}}
+    <div class="product">
+        <h2><a href="/product/{{id}}">{{name}}</a></h2>
+        <div class="image"><img src="{{imageUrl}}" alt="{{name}} image"></div>
+        <div class="inventory">{{inventory}} in stock</div>
+        <div class="cost">${{unitCost}}</div>
+    </div>
+    {{/products}}
+</div>
+
+{{> footer.mustache }}

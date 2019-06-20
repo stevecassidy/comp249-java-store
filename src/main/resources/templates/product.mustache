@@ -1,0 +1,23 @@
+{{> header.mustache }}
+
+<h1>{{product.name}}</h1>
+
+<div>
+    <img src="{{product.imageUrl}}" alt="{{product.name}} image">
+</div>
+<div>
+    <ul>
+        <li>Cost: {{product.unitCost}}</li>
+        <li>Inventory: {{product.inventory}}</li>
+    </ul>
+</div>
+<p>{{!product.description}}</p>
+<form action="/cart" method="POST">
+    <!---Quantity cannot exceed inventory of product--->
+    <input name="quantity" type="number" value="1" min="0" max="{{product.inventory}}"/>
+    <input name="product" type="hidden" value="{{product.id}}"/>
+    <input name="submit" type="submit" value="Add to Cart"/>
+</form>
+</div>
+
+{{> footer.mustache }}
