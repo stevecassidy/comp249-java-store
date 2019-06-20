@@ -39,7 +39,6 @@ public class StoreDAO {
     /* shopping cart */
 
     public ArrayList<CartEntry> getCart(String sessionid) {
-        System.out.println("getCart " + sessionid);
         ArrayList<CartEntry> result = cartStore.get(sessionid);
         if (result != null) {
             return result;
